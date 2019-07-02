@@ -11,47 +11,47 @@
 
 // Example format of an intern object: 1,examples@you.edu,Example,F
 const example = {
-  "id": 0,
-  "name": "Example",
-  "email": "examples@you.edu",
-  "gender": "F"
+  id: 0,
+  name: "Example",
+  email: "examples@you.edu",
+  gender: "F"
 }
 
 // Write your intern objects here:
 
 let mitzi = {
-  "id": 1,
-  "name": "Mitzi",
-  "email": "mmelloy0@psu.edu",
-  "gender": "F"
+  id: 1,
+  name: "Mitzi",
+  email: "mmelloy0@psu.edu",
+  gender: "F"
 }
 
 let kennan = {
-  "id": 2,
-  "name": "Kennan",
-  "email": "kdiben1@tinypic.com",
-  "gender": "M"
+  id: 2,
+  name: "Kennan",
+  email: "kdiben1@tinypic.com",
+  gender: "M"
 }
 
 let keven = {
-  "id": 3,
-  "name": "Keven",
-  "email": "kmummery2@wikimedia.org",
-  "gender": "M"
+  id: 3,
+  name: "Keven",
+  email: "kmummery2@wikimedia.org",
+  gender: "M"
 }
 
 let gannie = {
-  "id": 4,
-  "name": "Gennie",
-  "email": "gmartinson2@illinois.edu",
-  "gender": "F"
+  id: 4,
+  name: "Gennie",
+  email: "gmartinson2@illinois.edu",
+  gender: "F"
 }
 
 let antonietta = {
-  "id": 5,
-  "name": "Antonietta",
-  "email": "adaine5@samsung.com",
-  "gender": "F"
+  id: 5,
+  name: "Antonietta",
+  email: "adaine5@samsung.com",
+  gender: "F"
 }
 
 // ==== Challenge 2: Reading Object Data ==== 
@@ -94,16 +94,37 @@ console.log(antonietta.multiplyNums(3,4));
 // 3. Nest a grandchild object in the child object with properties for name and age.  The name will be Sam and the age will be 30
 // 4. Give each of the objects the ability to speak their names using the this keyword.
 
-const parent = {}
+const parent = {
+  name: "Susan",
+  age: 70,
+  child: {
+    name: "George",
+    age: 50,
+    grandchild: {
+      name: "Sam",
+      age: 30,
+      speak: function() {
+        console.log(`Hello, my name is ${this.name}!`);
+      }
+    },
+    speak: function() {
+      console.log(`Hello, my name is ${this.name}!`);
+    }
+  },
+  speak: function() {
+    console.log(`Hello, my name is ${this.name}!`);
+  }
+}
 
 // Log the parent object's name
-
+console.log(parent.name);
 // Log the child's age
-
+console.log(parent.child.age);
 // Log the name and age of the grandchild
-
+console.log(parent.child.grandchild.name, parent.child.grandchild.age);
 // Have the parent speak
-
+parent.speak();
 // Have the child speak
-
+parent.child.speak();
 // Have the grandchild speak
+parent.child.grandchild.speak();
